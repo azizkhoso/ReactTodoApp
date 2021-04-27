@@ -2,7 +2,7 @@
 
 function Header(){
     return (
-        <header>
+        <header style={{textAlign: "center"}}>
             <h1>Todos</h1>
         </header>
     )

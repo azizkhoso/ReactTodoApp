@@ -8,13 +8,13 @@ class TodoList extends React.Component{
     }
     render(){
         return (
-            <ul>
+            <div className="col-12">
                 {this.props.todos.map(item => 
                     (
                         <TodoItem key={item.id} data={item} handleChangeProperty={this.props.handleChangeProperty} remove={this.props.remove}/>
                     )
                 )}
-            </ul>
+            </div>
         )
     }
 }
