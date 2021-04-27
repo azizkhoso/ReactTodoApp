@@ -35,11 +35,23 @@ class TodoContainer extends React.Component{
             })
         });
     }
+    handleInput = (inputValue)=>{
+        let todoElement = {
+            id: this.state.todos.length+1,
+            title: inputValue,
+            completed: false
+        }
+        this.state.todos.push(todoElement);
+        let newTodos = this.state.todos;
+        this.setState({
+            todos: newTodos
+        });
+    }
     render(){
         return (
             <div>
                 <Header />
-                <InputTodo />
+                <InputTodo handleInput={this.handleInput}/>
                 <TodoList todos={this.state.todos} handleChangeProperty={this.handleChange}/>
             </div>
         );

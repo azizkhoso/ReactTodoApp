@@ -6,12 +6,15 @@ class InputTodo extends React.Component{
         super(props);
 
     }
-
+    getValue = (e) =>{
+        let input = e.target.previousElementSibling;
+        this.props.handleInput(input.value);
+    }
     render(){
         return (
             <div>
-                <input type="text" placeholder="Enter todo"></input>
-                <button type="button">Add</button>
+                <input id="inputTodo" value={''} type="text" placeholder="Enter todo"></input>
+                <button onClick={(e)=>this.getValue(e)} type="button">Add</button>
             </div>
         )
     }
