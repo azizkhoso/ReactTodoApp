@@ -13,7 +13,7 @@ class InputTodo extends React.Component{
     render(){
         return (
             <div>
-                <input id="inputTodo" value={''} type="text" placeholder="Enter todo"></input>
+                <input id="inputTodo" type="text" placeholder="Enter todo"></input>
                 <button onClick={(e)=>this.getValue(e)} type="button">Add</button>
             </div>
         )

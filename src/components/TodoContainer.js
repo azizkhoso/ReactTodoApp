@@ -37,7 +37,7 @@ class TodoContainer extends React.Component{
     }
     handleInput = (inputValue)=>{
         let todoElement = {
-            id: this.state.todos.length+1,
+            id: this.state.todos[this.state.todos.length-1].id+1,
             title: inputValue,
             completed: false
         }
@@ -47,12 +47,17 @@ class TodoContainer extends React.Component{
             todos: newTodos
         });
     }
+    remove = (id) =>{
+        this.setState({
+            todos: this.state.todos.filter(item => item.id!==id)
+        });
+    }
     render(){
         return (
             <div>
                 <Header />
                 <InputTodo handleInput={this.handleInput}/>
-                <TodoList todos={this.state.todos} handleChangeProperty={this.handleChange}/>
+                <TodoList todos={this.state.todos} handleChangeProperty={this.handleChange} remove={this.remove}/>
             </div>
         );
     }
