@@ -3,7 +3,7 @@
 function Header(){
     return (
         <header style={{textAlign: "center"}}>
-            <h1>Todos</h1>
+            <h1 className="w3-teal">Todos</h1>
         </header>
     )
 }

@@ -59,7 +59,7 @@ class TodoContainer extends React.Component{
             marginRight: '30%'
         };
         return (
-            <div style={appStyle}>
+            <div className="w3-container">
                 <Header />
                 <InputTodo handleInput={this.handleInput}/>
                 <TodoList todos={this.state.todos} handleChangeProperty={this.handleChange} remove={this.remove}/>

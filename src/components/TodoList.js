@@ -8,13 +8,13 @@ class TodoList extends React.Component{
     }
     render(){
         return (
-            <div className="col-12">
+            <ul className="w3-ul w3-border w3-hoverable">
                 {this.props.todos.map(item => 
                     (
                         <TodoItem key={item.id} data={item} handleChangeProperty={this.props.handleChangeProperty} remove={this.props.remove}/>
                     )
                 )}
-            </div>
+            </ul>
         )
     }
 }
