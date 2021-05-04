@@ -52,11 +52,16 @@ class TodoContainer extends React.Component {
       todos: this.state.todos.filter((item) => item.id !== id)
     });
   };
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          todos: json.slice(0, 9)
+        });
+      });
+  }
   render() {
-    const appStyle = {
-      marginLeft: "30%",
-      marginRight: "30%"
-    };
     return (
       <div className="w3-container">
         <Header />
